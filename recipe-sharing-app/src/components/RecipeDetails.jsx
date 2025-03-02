@@ -4,7 +4,7 @@ import  useRecipeStore  from './recipeStore';
 
 const RecipeDetails = () => {
     const { id } = useParams();
-    const recipe = useRecipeStore(state => state.recipes.find(r => r.id === id));
+    const recipe = useRecipeStore(state => state.recipes.find(recipe => recipe.id === id));
 
     if (!recipe) {
         return <div>Recipe not found</div>;
