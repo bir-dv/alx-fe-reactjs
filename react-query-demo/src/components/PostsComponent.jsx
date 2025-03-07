@@ -17,13 +17,13 @@ const fetchPosts = async () => {
 const PostsComponent = () => {
 
   const queryClient = useQueryClient();
-  const { data: posts, isLoading, error } = useQuery({
+  const { data: posts, isLoading,isError, error } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
   });
 
   if (isLoading) return <p>Loading posts...</p>;
-  if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+  if (isError) return <p style={{ color: "red" }}>Error: {error.message}</p>;
 
   return (
     <div>
