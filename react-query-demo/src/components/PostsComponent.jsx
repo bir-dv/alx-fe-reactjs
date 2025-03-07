@@ -22,6 +22,8 @@ const PostsComponent = () => {
     queryFn: fetchPosts,
     staleTime: 5000, // Data stays fresh for 5 seconds before refetching
     cacheTime: 1000 * 60 * 5, // Cache data for 5 minutes
+    refetchOnWindowFocus: false, // Prevent automatic refetching when the window is focused
+    keepPreviousData: true, // Keep the previous data while fetching new data
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -31,7 +33,7 @@ const PostsComponent = () => {
     <div>
       <h2>Posts</h2>
       <button onClick={() => queryClient.invalidateQueries({ queryKey: ["posts"] })} style={{ marginBottom: "1rem" }}>
-        Refresh Posts
+        Refresh
       </button>
       <ul>
         {posts.map((post) => (
