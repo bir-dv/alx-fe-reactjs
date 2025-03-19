@@ -3,24 +3,83 @@
         "id": 1,
         "title": "Spaghetti Carbonara",
         "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://images.pexels.com/photos/4518844/pexels-photo-4518844.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "ingredients": [
+            "200g spaghetti",
+            "2 eggs",
+            "50g grated Parmesan cheese",
+            "100g bacon (pancetta)",
+            "Salt and black pepper"
+        ],
+        "instructions": [
+            "Cook the spaghetti in salted boiling water until al dente.",
+            "Fry the bacon until crispy.",
+            "Whisk eggs with grated Parmesan, salt, and black pepper.",
+            "Drain spaghetti and mix immediately with the egg mixture and bacon.",
+            "Serve hot with extra Parmesan on top."
+        ]
     },
     {
         "id": 2,
         "title": "Chicken Tikka Masala",
         "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://images.pexels.com/photos/17650171/pexels-photo-17650171/free-photo-of-meal-with-meat-and-rice.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "ingredients": [
+            "500g chicken breast",
+            "1 cup yogurt",
+            "2 tbsp tikka masala spice mix",
+            "1 cup tomato puree",
+            "1/2 cup heavy cream",
+            "Salt and black pepper"
+        ],
+        "instructions": [
+            "Marinate chicken with yogurt and spices for at least 2 hours.",
+            "Grill or bake the chicken until cooked through.",
+            "In a pan, cook tomato puree with spices and add grilled chicken.",
+            "Stir in heavy cream and simmer for 10 minutes.",
+            "Serve with rice or naan."
+        ]
     },
     {
         "id": 3,
         "title": "Chicken shawarma",
         "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-        "image": "https://images.pexels.com/photos/5779364/pexels-photo-5779364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "image": "https://images.pexels.com/photos/5779364/pexels-photo-5779364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "ingredients": [
+            "500g chicken breast",
+            "1 cup yogurt",
+            "2 tbsp tikka masala spice mix",
+            "1 cup tomato puree",
+            "1/2 cup heavy cream",
+            "Salt and black pepper"
+        ],
+        "instructions": [
+            "Marinate chicken with yogurt and spices for at least 2 hours.",
+            "Grill or bake the chicken until cooked through.",
+            "In a pan, cook tomato puree with spices and add grilled chicken.",
+            "Stir in heavy cream and simmer for 10 minutes.",
+            "Serve with rice or naan."
+        ]
     },
     {
         "id": 4,
         "title": "lasagna",
         "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-        "image": "https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "image": "https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "ingredients": [
+            "500g chicken breast",
+            "1 cup yogurt",
+            "2 tbsp tikka masala spice mix",
+            "1 cup tomato puree",
+            "1/2 cup heavy cream",
+            "Salt and black pepper"
+        ],
+        "instructions": [
+            "Marinate chicken with yogurt and spices for at least 2 hours.",
+            "Grill or bake the chicken until cooked through.",
+            "In a pan, cook tomato puree with spices and add grilled chicken.",
+            "Stir in heavy cream and simmer for 10 minutes.",
+            "Serve with rice or naan."
+        ]
     }
 ]
