@@ -4,14 +4,14 @@ function AddRecipeForm ({onAddRecipe}){
     const [title, setTitle] = useState("");
     const [ingredients, setIngredients] = useState("");
     const [steps, setSteps] = useState("");
-    const [error, setError] = useState("");
+    const [errors, setErrors] = useState({});
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Validation checks
         if (!title.trim() || !ingredients.trim() || !steps.trim()) {
-          setError("All fields are required.");
+          setErrors("All fields are required.");
           return;
         }
 
@@ -21,11 +21,11 @@ function AddRecipeForm ({onAddRecipe}){
 
 
         if (ingredientList.length < 2) {
-          setError("Please enter at least two ingredients.");
+          setErrors("Please enter at least two ingredients.");
           return;
         }
 
-        setError(""); // Clear error if validation passes
+        setErrors(""); // Clear error if validation passes
 
         // Create a new recipe object
         const newRecipe = {
@@ -47,7 +47,7 @@ function AddRecipeForm ({onAddRecipe}){
     return (
         <div className="container mx-auto max-w-lg bg-white rounded-lg shadow-lg p-6 mt-10">
             <h2 className="text-2xl font-bold text-center text-gray-600">Add a New Recept</h2>
-            {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
+            {errors && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
             <form onSubmit={handleSubmit} className="space-y-4 mt-8">
                 <div>
                     <label className="block font-semibold text-gray-700 ">Title:</label>
