@@ -3,19 +3,23 @@ import { useState } from "react";
 function AddRecipeForm ({onAddRecipe}){
     const [title, setTitle] = useState("");
     const [ingredients, setIngredients] = useState("");
-    const [instructions, setInstructions] = useState("");
+    const [steps, setSteps] = useState("");
     const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Validation checks
-        if (!title.trim() || !ingredients.trim() || !instructions.trim()) {
+        if (!title.trim() || !ingredients.trim() || !steps.trim()) {
           setError("All fields are required.");
           return;
         }
 
+        // Convert inputs into arrays
         const ingredientList = ingredients.split("\n").map(item => item.trim()).filter(Boolean);
+        const stepsList = steps.split("\n").map((item) => item.trim()).filter(Boolean);
+
+
         if (ingredientList.length < 2) {
           setError("Please enter at least two ingredients.");
           return;
@@ -28,7 +32,7 @@ function AddRecipeForm ({onAddRecipe}){
         id: Date.now(),
         title,
         ingredients: ingredientList,
-        instructions: instructions.split("\n").map(item => item.trim()).filter(Boolean),
+        steps: stepsList,
       };
 
       onAddRecipe(newRecipe);
@@ -36,7 +40,7 @@ function AddRecipeForm ({onAddRecipe}){
         // Clear the form
         setTitle("");
         setIngredients("");
-        setInstructions("");
+        setSteps("");
 
     }
 
@@ -44,7 +48,7 @@ function AddRecipeForm ({onAddRecipe}){
         <div className="container mx-auto max-w-lg bg-white rounded-lg shadow-lg p-6 mt-10">
             <h2 className="text-2xl font-bold text-center text-gray-600">Add a New Recept</h2>
             {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
-            <form className="space-y-4 mt-8">
+            <form onSubmit={handleSubmit} className="space-y-4 mt-8">
                 <div>
                     <label className="block font-semibold text-gray-700 ">Title:</label>
                     <input
@@ -69,8 +73,8 @@ function AddRecipeForm ({onAddRecipe}){
                 <div>
                     <label className="block font-semibold text-gray-700 ">Instructions ( one per line ):</label>
                     <textarea
-                        value={instructions}
-                        onChange={(e) => setInstructions(e.target.value)}
+                        value={steps}
+                        onChange={(e) => setSteps(e.target.value)}
                         className="w-full p-4 mt-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                         rows="4"
                         required
