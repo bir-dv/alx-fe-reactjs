@@ -63,7 +63,7 @@ function AddRecipeForm ({onAddRecipe}){
     }
 
     return (
-        <div className="container mx-auto max-w-lg bg-white rounded-lg shadow-lg p-6 mt-10">
+        <div className="container mx-auto max-w-lg bg-white rounded-lg shadow-lg p-6 mt-10 md:max-w-2xl">
             <h2 className="text-2xl font-bold text-center text-gray-600">Add a New Recept</h2>
             {Object.keys(errors).map((errorKey) => (
                 <p key={errorKey} className="text-red-500">{errors[errorKey]}</p>
