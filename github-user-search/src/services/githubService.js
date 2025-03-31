@@ -10,7 +10,7 @@ export const fetchUserData = async (username, location, minRepos, page = 1) => {
 
     //let creat api request with pagination support 
     const response = await axios.get(
-      `https://api.github.com/search/users?q=${query}$page=${page}&per_page=5`
+      `https://api.github.com/search/users?q=${query}$page=${page}&per_page=3`
     );
 
     // Check if any user found

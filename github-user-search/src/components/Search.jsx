@@ -1,6 +1,7 @@
 // src/components/Search.jsx
 import React, { useState } from 'react';
 import { fetchUserData } from '../services/githubService';
+import backgroundImage from '/src/assets/github.jpg';
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -56,55 +57,48 @@ const Search = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">GitHub User Search</h1>
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed flex justify-center items-center relative"
+    style={{ backgroundImage: `url(https://images.pexels.com/photos/3612932/pexels-photo-3612932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)` }}>
+      {/* Main content */}
+      <div className="bg-gray-200 bg-opacity-80 p-8 rounded-xl shadow-xl w-full md:max-w-xl z-10">
+        <h1 className="text-2xl font-bold text-[#003366] mb-6 text-center">GitHub User Search</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block mb-1 font-medium">Username</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter GitHub username"
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter GitHub Username"
+            className="w-full p-3 border-2 border-[#04294F] rounded-md focus:outline-none focus:border-[#04294f] bg-transparent text-[#04294F] font-bold font-mono placeholder:text-[rgba(4,41,79,0.5)]"
+            required
+          />
 
-          <div>
-            <label className="block mb-1 font-medium">Location (optional)</label>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Enter location"
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Enter Location (optional)"
+            className="w-full p-3 border-2 border-[#04294F] rounded-md focus:outline-none focus:border-[#04294f] bg-transparent text-[#04294F] font-bold font-mono placeholder:text-[rgba(4,41,79,0.5)]"
+          />
 
-          <div>
-            <label className="block mb-1 font-medium">Minimum Repositories (optional)</label>
-            <input
-              type="number"
-              value={minRepos}
-              onChange={(e) => setMinRepos(e.target.value)}
-              placeholder="Enter minimum repositories"
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+          <input
+            type="number"
+            value={minRepos}
+            onChange={(e) => setMinRepos(e.target.value)}
+            placeholder="Enter Minimum Repositories (optional)"
+            className="w-full p-3 border-2 border-[#04294F] rounded-md focus:outline-none focus:border-[#04294f] bg-transparent text-[#04294F] font-bold font-mono placeholder:text-[rgba(4,41,79,0.5)]"
+          />
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
+            className="w-full p-3 bg-[#003366] text-white rounded-md hover:bg-[#002347] transition-colors duration-300"
           >
             Search
           </button>
         </form>
 
-        {isLoading && <p className="text-gray-500 mt-4">Loading...</p>}
-        {error && <p className="text-red-500 mt-4">{error}</p>}
+        {isLoading && <p className="text-center mt-4">Loading...</p>}
+        {error && <p className="text-red-500 text-center mt-4">{error}</p>}
 
         {users.length > 0 && !error && (
           <div className="mt-6">
@@ -132,7 +126,7 @@ const Search = () => {
             {users.length < totalCount && (
               <button
                 onClick={handleLoadMore}
-                className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition mt-4"
+                className="w-full bg-[#04294F] text-white py-2 rounded-md hover:bg-[#002347] transition mt-4"
               >
                 Load More
               </button>
